@@ -1,3 +1,5 @@
+#mention ldh rule for email domain
+#check bout latin char in name ascii/unicode
 #https://regex101.com/
 import re
 
