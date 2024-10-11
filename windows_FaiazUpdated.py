@@ -7,6 +7,10 @@ import sqlite3
 from tkinter import *
 from tkinter import messagebox, ttk
 
+#Faiaz Added This import
+from export_to_excel import export_to_excel
+
+
 # Function to add a new row to the specified table
 def add_new_row(table_name, columns, values):
     conn = sqlite3.connect('warehouse.db')
@@ -54,6 +58,13 @@ def main_window():
 
     welcome_label = Label(root, text="Welcome to the Warehouse Management System", font=("Arial", 16), bg='lightgray')
     welcome_label.pack(pady=20)
+
+    #FAIAZ CHANGE
+    for table_name in columns_dict.keys():
+        Button(root, text=f"Manage {table_name}", command=lambda tn=table_name: open_table_management(tn, columns_dict[tn])).pack(pady=10)
+
+    #FAIAZ CHANGE - Add the Export to Excel button
+    Button(root, text="Export to Excel", command=lambda: export_to_excel()).pack(pady=10)
 
     def open_table_management(table_name, columns):
         # Subwindow for table management
