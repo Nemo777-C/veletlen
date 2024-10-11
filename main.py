@@ -6,7 +6,7 @@ import re
 
 # suppliers Tables
 def supplier_validation(supplier_name, contact_name, phone, email, address):
-    res = {
+    supres = {
         "supplier_name": True,
         "contact_name": True,
         "phone": True,
